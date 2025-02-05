@@ -1,5 +1,8 @@
 # Scrimba Quizzical Clone
 
+![Preview of the project's page](./assets-readme/answers-not-checked.png)
+![Preview of the project's page with the showcase of the answers](./assets-readme/answers-checked.png)
+
 ## About
 
 It is a web app, created in September 2024 using React (Javascript) to learn
