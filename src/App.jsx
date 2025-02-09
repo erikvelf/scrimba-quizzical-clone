@@ -18,12 +18,10 @@ function App() {
 			setCheckAnswers(!checkAnswers)
 			console.log("handleClick: check answers toggled")
 		} else {
-			if (isInCooldown) {
-				console.log("wait a little to get new questions!")
-			} else {
+			setIsQuizStarted(false)
+			setTimeout(() => {
 				setIsQuestionsEmpty(true)
-				console.log("handleClick: questions are empty")
-			}
+			}, 4000);
 		}
 	}
 
