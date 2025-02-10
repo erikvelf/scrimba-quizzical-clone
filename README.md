@@ -27,3 +27,4 @@ npm run dev
 
 - [ ] Add menu selection for Categories like Animals, Art...
 - [ ] Improve the UX by making the "Get new questions" more responsive
+- [ ] Add new entries for type of quiz (true or false, multiple answers, ...)
