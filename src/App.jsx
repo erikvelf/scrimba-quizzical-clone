@@ -19,9 +19,7 @@ function App() {
 			console.log("handleClick: check answers toggled")
 		} else {
 			setIsQuizStarted(false)
-			setTimeout(() => {
-				setIsQuestionsEmpty(true)
-			}, 4000);
+			setIsQuestionsEmpty(true)
 		}
 	}
 
