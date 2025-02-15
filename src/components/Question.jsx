@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import React from "react";
+import { decode } from "he";
 
 export default function Question({
     questionData,
@@ -65,7 +66,7 @@ export default function Question({
 
     return (
         <fieldset role="radiogroup" className="quiz">
-            <legend>{question}</legend>
+            <legend>{decode(question)}</legend>
             <div className="answers-container">
                 {options}
             </div>
