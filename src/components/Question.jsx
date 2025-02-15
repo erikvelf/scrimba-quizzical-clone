@@ -59,7 +59,7 @@ export default function Question({
                     checked={selectedAnswer === answer}
                     onChange={selectClickedAnswer(answer)}
             />
-                {answer}
+                {decode(answer)}
             </label>)    
     })
 
