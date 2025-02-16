@@ -27,14 +27,15 @@ function App() {
 		<Questions checkAnswers={checkAnswers} setCheckAnswers={setCheckAnswers}
 		 isQuestionsEmpty={isQuestionsEmpty} setIsQuestionsEmpty={setIsQuestionsEmpty}/>
 
+		<div>
 		{!isQuestionsEmpty && <button id="check-answers-button" onClick={handleClick}>
 			{!checkAnswers? "Check answers" : "Play again"}
 		</button>}
 
 		{!checkAnswers && !isQuestionsEmpty && <button id="get-new-questions-button" onClick={() => setIsQuestionsEmpty(true)}>
 			Get new questions 
-		</button>
-		}
+		</button>}
+		</div>
 	</main>
 	: <Start onStart={startQuiz}/>
 }
