@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 import React from 'react';
 import Question from './Question';
 import { Score } from './Score';
+import Loader from './Loader';
 
 function shuffleAnswers(answers) {
     // providing a number N to sort() will make that element the order N in the sorted array
@@ -84,5 +85,5 @@ export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setI
             </div>
 
         </>
-    ) : (<div className="loader"></div>)
+    ) : <Loader />
 }
