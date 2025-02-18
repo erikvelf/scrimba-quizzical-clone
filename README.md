@@ -25,6 +25,8 @@ npm run dev
 
 ## TODO
 
+- [ ] Add "Play again" button to play again the selected category without going
+      back to the "Start"
 - [ ] Add menu selection for Categories like Animals, Art...
 - [ ] Improve the UX by making the "Get new questions" more responsive
 - [ ] Add new entries for type of quiz (true or false, multiple answers, ...)
