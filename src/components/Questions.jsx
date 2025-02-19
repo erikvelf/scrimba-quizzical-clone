@@ -3,6 +3,7 @@ import React from 'react';
 import Question from './Question';
 import { Score } from './Score';
 import Loader from './Loader';
+import { API_URL } from '../../shared/api';
 
 function shuffleAnswers(answers) {
     // providing a number N to sort() will make that element the order N in the sorted array
@@ -25,8 +26,6 @@ const colors = {
     right: "#94d7a2",
     selected: "#d6daf4"
 }
-
-const APIUrl = "https://opentdb.com/api.php?amount=5&type=multiple"
 
 
 export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setIsQuestionsEmpty}) => {
@@ -54,7 +53,7 @@ export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setI
         setTimeout(() => {
         if (isQuestionsEmpty) {
             setIsQuestionsEmpty(false)
-            getQuestions(APIUrl)
+            getQuestions(API_URL)
         }}, 5000)
 
 	return () => controller.abort()
