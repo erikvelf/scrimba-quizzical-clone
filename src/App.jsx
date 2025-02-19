@@ -12,6 +12,9 @@ function App() {
 	const [checkAnswers, setCheckAnswers] = React.useState(false)
 
 	const startQuiz = () => setIsQuizStarted(true)
+	const getNewQuestions = () => {
+		setIsQuestionsEmpty(true)
+	}
 
 	const handleClick = () => {
 		if (!checkAnswers) {
@@ -32,7 +35,7 @@ function App() {
 			{!checkAnswers? "Check answers" : "Play again"}
 		</button>}
 
-		{!checkAnswers && !isQuestionsEmpty && <button id="get-new-questions-button" onClick={() => setIsQuestionsEmpty(true)}>
+		{!checkAnswers && !isQuestionsEmpty && <button id="get-new-questions-button" onClick={getNewQuestions}>
 			Get new questions 
 		</button>}
 		</div>
