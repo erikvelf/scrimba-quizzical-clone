@@ -60,18 +60,6 @@ input[type="radio"] {
   padding: 2rem 0;
 }
 
-.answer {
-  margin: 12px 16px;
-
-  width: fit-content;
-  height: fit-content;
-
-  padding: 12px 16px;
-  border-radius: 5rem;
-  outline: #a3abcd 2px solid;
-}
-
-
 .answers-container {
   align-items: center;
   display: flex;
