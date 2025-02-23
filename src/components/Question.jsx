@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import React from "react";
 import { decode } from "he";
+import { Colors } from "../../shared/tokens";
 
 export default function Question({
     questionData,
@@ -45,9 +46,17 @@ export default function Question({
             }
         }
 
-        let answerStyle = {
-            outline: answer === selectedAnswer ? "none" : "",
-            backgroundColor: !checkAnswers && (answer === selectedAnswer)? colors.selected : colorOfTheAnswerBackground
+        const answerStyle = {
+            margin: "12px 16px",
+            width: "fit-content",
+            height: "fit-content",
+            padding: "12px 16px",
+            borderRadius: 16*2,
+
+            outline: answer != selectedAnswer ? `2px solid ${Colors.secondary}` : "none",
+
+            // outline: answer === selectedAnswer ? "none" : "",
+            backgroundColor: !checkAnswers && (answer === selectedAnswer)? Colors.primarySelected : colorOfTheAnswerBackground
         }
 
         return (
