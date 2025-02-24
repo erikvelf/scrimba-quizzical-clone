@@ -35,13 +35,13 @@ export default function Question({
         if (checkAnswers) {
             if (answer === correct_answer) {
                 if (selectedAnswer === correct_answer) {
-                    colorOfTheAnswerBackground = colors.right
+                    colorOfTheAnswerBackground = Colors.green
                 } else {
-                    colorOfTheAnswerBackground = "#CFF6D7"
+                    colorOfTheAnswerBackground = Colors.greenLight
                 }
             } else {
                 if (answer === selectedAnswer) {
-                    colorOfTheAnswerBackground = colors.wrong
+                    colorOfTheAnswerBackground = Colors.redLight
                 }
             }
         }
