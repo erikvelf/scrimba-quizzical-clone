@@ -45,7 +45,8 @@ export default function Question({
             }
         }
 
-        const answerStyle = {
+        const styles = {
+            answerStyle: {
             margin: "12px 16px",
             width: "fit-content",
             height: "fit-content",
@@ -56,10 +57,11 @@ export default function Question({
 
             // outline: answer === selectedAnswer ? "none" : "",
             backgroundColor: !checkAnswers && (answer === selectedAnswer)? Colors.primarySelected : colorOfTheAnswerBackground
-        }
+            }
 
+        }
         return (
-            <label htmlFor={quesitonId} className="answer" style={answerStyle} key={nanoid()}>
+            <label htmlFor={quesitonId} className="answer" style={styles.answerStyle} key={nanoid()}>
                 <input
                     id={quesitonId}
                     type="radio"
