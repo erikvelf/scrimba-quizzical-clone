@@ -7,7 +7,6 @@ export default function Question({
     questionData,
     updateAnswers,
     checkAnswers,
-    colors
 }) {    
     const { answers, correct_answer, order, question, id, selectedAnswer} = questionData
 
