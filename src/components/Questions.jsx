@@ -21,13 +21,6 @@ const transformFetchedData = (data) => data?.results? data.results.map((question
 })) : undefined
 
 
-const colors = {
-    wrong: "#f4dadd",
-    right: "#94d7a2",
-    selected: "#d6daf4"
-}
-
-
 export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setIsQuestionsEmpty}) => {
     // Taking the data from the API
     const [questionsData, setQuestionsData] = React.useState([])
@@ -75,7 +68,6 @@ export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setI
                 questionData={questionData}
                 updateAnswers={setQuestionsData}
                 checkAnswers={checkAnswers}
-                colors={colors}
             />)}
 
             <div>
