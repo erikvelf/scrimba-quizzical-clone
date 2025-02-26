@@ -6,6 +6,6 @@ export const Colors = {
     secondary: "#a3abcd",
     primaryDark: "#273364",
     green: "#94d7a2",
-    greenLight: "#f5f7fb",
+    greenLight: "#bbefc6",
     redLight: "#f6d9db"
 }
