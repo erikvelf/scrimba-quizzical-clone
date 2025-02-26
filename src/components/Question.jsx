@@ -32,16 +32,14 @@ export default function Question({
         let colorOfTheAnswerBackground = ""
 
         if (checkAnswers) {
-            if (answer === correct_answer) {
-                if (selectedAnswer === correct_answer) {
-                    colorOfTheAnswerBackground = Colors.green
-                } else {
-                    colorOfTheAnswerBackground = Colors.greenLight
-                }
-            } else {
-                if (answer === selectedAnswer) {
-                    colorOfTheAnswerBackground = Colors.redLight
-                }
+            if (answer === correct_answer && selectedAnswer === answer) {
+                colorOfTheAnswerBackground = Colors.green
+            } else if (answer === correct_answer && answer != selectedAnswer) {
+                colorOfTheAnswerBackground = Colors.greenLight
+            }
+
+            if (selectedAnswer === answer && answer != correct_answer) {
+                colorOfTheAnswerBackground = Colors.redLight
             }
         }
 
@@ -54,9 +52,7 @@ export default function Question({
             borderRadius: 16*2,
 
             outline: answer != selectedAnswer ? `2px solid ${Colors.secondary}` : "none",
-
-            // outline: answer === selectedAnswer ? "none" : "",
-            backgroundColor: !checkAnswers && (answer === selectedAnswer)? Colors.primarySelected : colorOfTheAnswerBackground
+            backgroundColor: (!checkAnswers && answer === selectedAnswer) ? Colors.primarySelected : colorOfTheAnswerBackground
             }
 
         }
