@@ -21,9 +21,8 @@ const transformFetchedData = (data) => data?.results? data.results.map((question
 })) : undefined
 
 
-export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setIsQuestionsEmpty}) => {
+export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setIsQuestionsEmpty, questionsData, setQuestionsData, setScore}) => {
     // Taking the data from the API
-    const [questionsData, setQuestionsData] = React.useState([])
     let score = 0
     
 	const controller = new AbortController()
@@ -52,13 +51,17 @@ export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setI
 	return () => controller.abort()
 	}, [isQuestionsEmpty])
 
-    if (checkAnswers) {
-        for (let i = 0; i < Object.keys(questionsData).length; i++) {
-            if (questionsData[i].selectedAnswer === questionsData[i].correct_answer) [
-                score += 1
-            ]
+
+    React.useEffect(() => {
+        if (checkAnswers) {
+            for (let i = 0; i < Object.keys(questionsData).length; i++) {
+                if (questionsData[i].selectedAnswer === questionsData[i].correct_answer) [
+                    score += 1
+                ]
+            }
+            setScore(() => score)
         }
-    }
+    }, [checkAnswers])
     
 
     return questionsData.length > 0 ? (
@@ -70,10 +73,10 @@ export const Questions = ({checkAnswers, setCheckAnswers, isQuestionsEmpty, setI
                 checkAnswers={checkAnswers}
             />)}
 
-            <div>
+            {/* <div>
                 {checkAnswers && <Score score={score} numberOfQuestions={questionsData.length} />}
             
-            </div>
+            </div> */}
 
         </>
     ) : <Loader />
