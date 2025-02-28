@@ -32,6 +32,22 @@ function App() {
 		}
 	}
 
+	const styles = {
+		resultControls: {
+			// finally I centered a div
+			maxWidth: "450px",
+			height: "fit-content",
+			// border: "1px solid red",
+			display: "flex",
+			alignItems: "center",
+			flexDirection: "row",
+			justifyContent: "space-around",
+			padding: "20px 4px",
+			margin: "0px auto",
+			marginTop: "20px",
+		}
+	}
+
 	return isQuizStarted ? <main>
 		<Questions
 			checkAnswers={checkAnswers}
@@ -43,7 +59,7 @@ function App() {
 			setScore={setScore}
 		/>
 
-		<div>
+		<div style={styles.resultControls}>
 		{checkAnswers && questionsData.length > 0 && <Score score={score} numberOfQuestions={questionsData.length}/>}
 
 		{!isQuestionsEmpty && <button id="check-answers-button" onClick={handleClick}>
